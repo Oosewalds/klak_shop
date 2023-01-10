@@ -7,6 +7,8 @@ app.use(bodyParser.json());
 const mongoose = require('mongoose');
 
 const productRoutes = require('./routes/productRouter');
+const UserRoutes = require('./routes/userRouter');
+const User = require('./models/user.js');
 
 
 
@@ -24,4 +26,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
+
+app.use('/api/', UserRoutes);
+
 module.exports = app;
